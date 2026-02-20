@@ -56,6 +56,15 @@ python3 -m http.server 8000
 - `gallery-cg1.png` — 愛彌斯 CG 過場動畫 1（Gallery）
 - `gallery-cg2.png` — 愛彌斯 CG 過場動畫 2（Gallery）
 - `gallery-cg3.png` — 愛彌斯 CG 過場動畫 3（Gallery）
+- `gallery-cg4.png` — 愛彌斯 CG 過場動畫 4（Gallery）
+- `aemeath-banner.png` — 愛彌斯活動預覽背景（Gallery）
+- `aemeath-portrait.png` — 愛彌斯角色立繪（Spine 肖像素材）
+- `weapon-body.png` — 永明極星武器全身立繪（武器區主圖）
+- `weapon-sword.png` — 永明極星劍身
+- `weapon-share.png` — 永明極星分享卡（Gallery）
+- `aemeath-gacha-splash.png` — 愛彌斯抽卡立繪
+- `aemeath-skill-icons.png` — 愛彌斯技能圖標合集
+- `aemeath-head256.png` — 愛彌斯頭像（256×256 高解析度）
 
 ### 角色圖標（256×256，來自 [ryanbenson/wuthering-waves-assets](https://github.com/ryanbenson/wuthering-waves-assets)）
 
