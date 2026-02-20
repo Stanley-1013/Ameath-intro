@@ -41,9 +41,25 @@ python3 -m http.server 8000
 
 ## 已包含的圖片
 
-以下圖片已從 [ryanbenson/wuthering-waves-assets](https://github.com/ryanbenson/wuthering-waves-assets) 下載並包含在專案中（256×256 PNG 角色圖標）：
+### 高解析度角色素材（來自 [555me/Wuthering-Waves-GameAssets](https://github.com/555me/Wuthering-Waves-GameAssets)）
 
-- `aemeath-splash.png` — 愛彌斯角色圖標（用作 Hero 區主圖）
+- `aemeath-splash-hd.png` — 愛彌斯角色分享立繪（Hero 主圖 / 設計 / Gallery）
+- `aemeath-pile.png` — 愛彌斯角色堆疊圖標（故事 / 設計）
+- `aemeath-activity.png` — 愛彌斯活動圖（故事 / 設計）
+- `aemeath-halfbody.png` — 愛彌斯半身立繪（故事 / 設計 / Gallery）
+- `aemeath-gacha-bg.png` — 愛彌斯抽卡背景（設計 / Gallery）
+- `weapon-everbright-hd.png` — 永明極星武器高解析度圖標
+- `pile-linnai.png` — 琳奈堆疊圖標
+- `pile-moning.png` — 莫寧堆疊圖標
+- `pile-qianxiao.png` — 千咲堆疊圖標
+- `pile-shouanren.png` — 守岸人堆疊圖標
+- `gallery-cg1.png` — 愛彌斯 CG 過場動畫 1（Gallery）
+- `gallery-cg2.png` — 愛彌斯 CG 過場動畫 2（Gallery）
+- `gallery-cg3.png` — 愛彌斯 CG 過場動畫 3（Gallery）
+
+### 角色圖標（256×256，來自 [ryanbenson/wuthering-waves-assets](https://github.com/ryanbenson/wuthering-waves-assets)）
+
+- `aemeath-splash.png` — 愛彌斯角色圖標
 - `avatar-aemeath.png` — 愛彌斯頭像
 - `avatar-linnai.png` — 琳奈頭像
 - `avatar-morning.png` — 莫寧頭像
