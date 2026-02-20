@@ -804,6 +804,74 @@
 }
 
 /* =====================
+   10.5. 影片專區
+   ===================== */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.video-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.video-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-glow-pink);
+}
+
+.video-card__embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+.video-placeholder .img-placeholder {
+  transition: transform var(--transition-slow);
+}
+
+.video-placeholder:hover .img-placeholder {
+  transform: scale(1.03);
+}
+
+.video-card__embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-card__info {
+  padding: var(--space-md) var(--space-lg);
+}
+
+.video-card__title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.video-card__desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* =====================
    10. Gallery
    ===================== */
 .gallery-grid {

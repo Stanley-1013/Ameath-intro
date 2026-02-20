@@ -39,9 +39,22 @@ npx serve .
 python3 -m http.server 8000
 ```
 
-## 如何添加真實圖片
+## 已包含的圖片
 
-目前所有圖片位置使用 CSS 漸層背景作為佔位。若要替換為真實圖片：
+以下圖片已從 [ryanbenson/wuthering-waves-assets](https://github.com/ryanbenson/wuthering-waves-assets) 下載並包含在專案中（256×256 PNG 角色圖標）：
+
+- `aemeath-splash.png` — 愛彌斯角色圖標（用作 Hero 區主圖）
+- `avatar-aemeath.png` — 愛彌斯頭像
+- `avatar-linnai.png` — 琳奈頭像
+- `avatar-morning.png` — 莫寧頭像
+- `avatar-chisaki.png` — 千咲頭像
+- `avatar-guardian.png` — 守岸人頭像
+- `avatar-verina.png` — 維里奈頭像
+- `weapon-everbright.png` — 永明極星武器圖標
+
+## 如何添加更多圖片
+
+其餘圖片位置使用 CSS 漸層背景作為佔位。若要替換為高解析度真實圖片：
 
 1. 將圖片下載到 `assets/images/` 目錄
 2. 依照下方檔名對應表命名

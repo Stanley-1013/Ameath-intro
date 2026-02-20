@@ -98,6 +98,11 @@
     border-radius: var(--radius-lg) 0 0 var(--radius-lg);
   }
 
+  /* 影片 */
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* 模態 */
   .mode-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -141,6 +146,11 @@
 
   /* 組隊 3 欄 */
   .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 影片 3 欄 */
+  .video-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
