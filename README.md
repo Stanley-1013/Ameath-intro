@@ -41,54 +41,55 @@ python3 -m http.server 8000
 
 ## 已包含的圖片
 
-### 高解析度角色素材（來自 [555me/Wuthering-Waves-GameAssets](https://github.com/555me/Wuthering-Waves-GameAssets)）
+### 圖片使用對照表
 
-- `aemeath-splash-hd.png` — 愛彌斯角色分享立繪（Hero 主圖 / 設計 / Gallery）
-- `aemeath-pile.png` — 愛彌斯角色堆疊圖標（故事 / 設計）
-- `aemeath-activity.png` — 愛彌斯活動圖（故事 / 設計）
-- `aemeath-halfbody.png` — 愛彌斯半身立繪（故事 / 設計 / Gallery）
-- `aemeath-gacha-bg.png` — 愛彌斯抽卡背景（設計 / Gallery）
-- `weapon-everbright-hd.png` — 永明極星武器高解析度圖標
-- `pile-linnai.png` — 琳奈堆疊圖標
-- `pile-moning.png` — 莫寧堆疊圖標
-- `pile-qianxiao.png` — 千咲堆疊圖標
-- `pile-shouanren.png` — 守岸人堆疊圖標
-- `gallery-cg1.png` — 愛彌斯 CG 過場動畫 1（Gallery）
-- `gallery-cg2.png` — 愛彌斯 CG 過場動畫 2（Gallery）
-- `gallery-cg3.png` — 愛彌斯 CG 過場動畫 3（Gallery）
-- `gallery-cg4.png` — 愛彌斯 CG 過場動畫 4（Gallery）
-- `aemeath-banner.png` — 愛彌斯活動預覽背景（Gallery）
-- `aemeath-portrait.png` — 愛彌斯角色立繪（Spine 肖像素材）
-- `weapon-body.png` — 永明極星武器全身立繪（武器區主圖）
-- `weapon-sword.png` — 永明極星劍身
-- `weapon-share.png` — 永明極星分享卡（Gallery）
-- `aemeath-gacha-splash.png` — 愛彌斯抽卡立繪
-- `aemeath-skill-icons.png` — 愛彌斯技能圖標合集
-- `aemeath-head256.png` — 愛彌斯頭像（256×256 高解析度）
+每張圖片僅使用於指定位置（影片縮圖為唯一允許的複用）。
 
-### 角色圖標（256×256，來自 [ryanbenson/wuthering-waves-assets](https://github.com/ryanbenson/wuthering-waves-assets)）
+**主要內容區（每張圖僅用一次）：**
 
-- `aemeath-splash.png` — 愛彌斯角色圖標
-- `avatar-aemeath.png` — 愛彌斯頭像
-- `avatar-linnai.png` — 琳奈頭像
-- `avatar-morning.png` — 莫寧頭像
-- `avatar-chisaki.png` — 千咲頭像
-- `avatar-guardian.png` — 守岸人頭像
-- `avatar-verina.png` — 維里奈頭像
-- `weapon-everbright.png` — 永明極星武器圖標
+| 圖片 | 用途 | 來源 |
+|------|------|------|
+| `aemeath-splash-hd.png` | Hero 主視覺 | 555me/GameAssets — RoleShare |
+| `aemeath-activity.png` | 故事卡 1「活潑的粉髮少女」 | 555me/GameAssets — ActivityRole |
+| `aemeath-halfbody.png` | 故事卡 2「星炬學院的適格者」 | 555me/GameAssets — ActivityHalfBody |
+| `aemeath-banner.png` | 故事卡 3「星輝中飛翔的歌姬」 | 555me/GameAssets — RoleBg |
+| `aemeath-gacha-splash.png` | 設計卡 1「粉色漸變長髮」 | 555me/GameAssets — Luckdraw |
+| `new-skin.png` | 設計卡 2「科技風黑粉服飾」 | 555me/GameAssets — RoleSkin |
+| `aemeath-head256.png` | 設計卡 3「招牌剪刀手 Ciallo」 | 555me/GameAssets — IconRoleHead256 |
+| `new-trial-vague.png` | 設計卡 4「電子幽靈形態」 | 555me/GameAssets — ActivityRoleOntrialVague |
+| `weapon-body.png` | 武器區主圖 | 555me/GameAssets — WeaponBody |
 
-## 如何添加更多圖片
+**Gallery（全部為不與上方重複的獨立圖片）：**
 
-其餘圖片位置使用 CSS 漸層背景作為佔位。若要替換為高解析度真實圖片：
+| 圖片 | 內容 |
+|------|------|
+| `weapon-share.png` | 永明極星光效立繪 |
+| `new-weapon-bg.png` | 永明極星活動全景 |
+| `new-guide-jiexing.jpg` | 角色攻略 — 結星 |
+| `new-guide-jinlingzi.jpg` | 角色攻略 — 金鈴子 |
+| `new-guide-moealkyne.jpg` | 角色攻略 — Moealkyne |
+| `new-luckdraw-w.png` | 抽卡星海氛圍背景 |
 
-1. 將圖片下載到 `assets/images/` 目錄
-2. 依照下方檔名對應表命名
-3. 圖片載入後會自動替換漸層佔位
+**影片縮圖（從主內容區複用，最多使用 2 次）：**
 
-### 圖片檔名對應表
+| 影片 | 縮圖 |
+|------|------|
+| Paper Plane | `aemeath-halfbody.png` |
+| Fallen Petals | `aemeath-gacha-splash.png` |
+| Combat Showcase | `aemeath-banner.png` |
+| Indigo Universe | `aemeath-gacha-bg.png` |
+| GRADUATION SHOW | `aemeath-splash-hd.png` |
+| Cinematic Short | `aemeath-activity.png` |
 
-| 檔名 | 內容 | 建議尺寸 |
-|------|------|---------|
+**角色頭像圖標（256×256）：**
+- `avatar-aemeath.png` / `avatar-linnai.png` / `avatar-morning.png`
+- `avatar-chisaki.png` / `avatar-guardian.png` / `avatar-verina.png`
+
+### 素材來源
+
+- [555me/Wuthering-Waves-GameAssets](https://github.com/555me/Wuthering-Waves-GameAssets) — CN 版遊戲 UI 素材
+- [ryanbenson/wuthering-waves-assets](https://github.com/ryanbenson/wuthering-waves-assets) — 角色圖標
+- [MoonShadow1976/WutheringWaves_OverSea_StaticAssets](https://github.com/MoonShadow1976/WutheringWaves_OverSea_StaticAssets) — 社群攻略圖
 | `aemeath-splash.jpg` | Hero 主視覺 Splash Art | 600×800 |
 | `story-daily.jpg` | 日常/校園場景 | 400×300 |
 | `story-academy.jpg` | 星炬學院相關 | 400×300 |
