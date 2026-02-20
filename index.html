@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="鳴潮（Wuthering Waves）角色「愛彌斯（Aemeath）」設計細節展示網站">
+  <title>AEMEATH — 愛彌斯 | 鳴潮角色展示</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ============================
+       1. Loading 畫面
+       ============================ -->
+  <div id="loader">
+    <div class="loader-ring"></div>
+    <div class="loader-text">LOADING</div>
+  </div>
+
+  <!-- ============================
+       Canvas 星空背景
+       ============================ -->
+  <canvas id="starfield"></canvas>
+
+  <!-- ============================
+       浮動粒子
+       ============================ -->
+  <div class="floating-particles" id="particles"></div>
+
+  <!-- ============================
+       2. 頂部導航列
+       ============================ -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">AEMEATH</a>
+      <div class="nav__links">
+        <a href="#story" class="nav__link">故事</a>
+        <a href="#design" class="nav__link">設計</a>
+        <a href="#skills" class="nav__link">技能</a>
+        <a href="#modes" class="nav__link">模態</a>
+        <a href="#weapon" class="nav__link">武器</a>
+        <a href="#teams" class="nav__link">配隊</a>
+        <a href="#chain" class="nav__link">共鳴鏈</a>
+      </div>
+      <div class="nav__hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="nav__mobile-menu" id="mobileMenu">
+      <a href="#story" class="nav__mobile-link">故事</a>
+      <a href="#design" class="nav__mobile-link">設計</a>
+      <a href="#skills" class="nav__mobile-link">技能</a>
+      <a href="#modes" class="nav__mobile-link">模態</a>
+      <a href="#weapon" class="nav__mobile-link">武器</a>
+      <a href="#teams" class="nav__mobile-link">配隊</a>
+      <a href="#chain" class="nav__mobile-link">共鳴鏈</a>
+    </div>
+  </nav>
+
+  <!-- ============================
+       3. Hero 區
+       ============================ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
+
+      <!-- 角色大圖 -->
+      <div class="hero__image-wrapper hero-element">
+        <div class="img-placeholder">
+          <img src="./assets/images/aemeath-splash.jpg" alt="愛彌斯 Splash Art" onerror="this.style.display='none'">
+          <span class="placeholder-text">愛彌斯<br>Splash Art</span>
+        </div>
+      </div>
+
+      <!-- 版本徽章 -->
+      <div class="hero__badge hero-element">
+        <span class="badge">
+          <i class="fa-solid fa-star" style="font-size: 0.6rem;"></i>
+          WUTHERING WAVES · 鳴潮 3.1
+        </span>
+      </div>
+
+      <!-- 標題 -->
+      <h1 class="hero__title hero-element">AEMEATH</h1>
+      <p class="hero__subtitle hero-element">愛 彌 斯</p>
+
+      <!-- 簡介 -->
+      <p class="hero__desc hero-element">
+        來自拉海洛羅亞部族的電子幽靈少女，星炬學院適格者。<br>
+        藝名 Fleet Snowfluff（軟綿雪花），以歌聲與星光為刃，守護所愛之人。
+      </p>
+
+      <!-- 語錄 -->
+      <div class="hero__quote hero-element">
+        <div class="quote-box">
+          「但願我會讓你感到驕傲，但願我沒有讓你失望」
+        </div>
+      </div>
+
+      <!-- 快速資訊標籤 -->
+      <div class="hero__tags hero-element">
+        <span class="tag tag--gold">
+          <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+          5 星限定
+        </span>
+        <span class="tag tag--coral">
+          <i class="fa-solid fa-fire"></i> 熱熔
+        </span>
+        <span class="tag tag--cyan">
+          <i class="fa-solid fa-bolt"></i> 迅刀
+        </span>
+        <span class="tag tag--pink">
+          <i class="fa-solid fa-crosshairs"></i> 主C · T0
+        </span>
+      </div>
+
+      <!-- 滾動提示 -->
+      <div class="hero__scroll-hint hero-element scroll-hint">
+        <span>SCROLL</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="section-divider gs">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ============================
+       4. 角色故事區
+       ============================ -->
+  <section class="section" id="story">
+    <div class="container">
+      <div class="section-header gs">
+        <span class="label">Lore &amp; Story</span>
+        <h2 class="title">角色故事</h2>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- 故事卡 1 -->
+      <div class="story-card card gs">
+        <div class="story-card__image img-hover-zoom">
+          <div class="img-placeholder">
+            <img src="./assets/images/story-daily.jpg" alt="愛彌斯日常場景" onerror="this.style.display='none'">
+            <span class="placeholder-text">活潑少女的日常</span>
+          </div>
+        </div>
+        <div class="story-card__body">
+          <div class="story-card__icon">🌸</div>
+          <h3 class="story-card__title">活潑的粉髮少女</h3>
+          <p class="story-card__text">
+            愛彌斯擁有從粉色漸變至檸檬黃的高馬尾、獨特的金色星形瞳孔、圍繞頭部的藍色數位光環，以及翼形髮夾。她活潑開朗，熱愛唱歌，是一位充滿感染力的少女。她的聲痕位於鎖骨下方，伴隨著藍色心形紋身，象徵著她與音樂和戰鬥的深厚聯繫。
+          </p>
+        </div>
+      </div>
+
+      <!-- 故事卡 2 -->
+      <div class="story-card card gs">
+        <div class="story-card__image img-hover-zoom">
+          <div class="img-placeholder">
+            <img src="./assets/images/story-academy.jpg" alt="星炬學院" onerror="this.style.display='none'">
+            <span class="placeholder-text">星炬學院適格者</span>
+          </div>
+        </div>
+        <div class="story-card__body">
+          <div class="story-card__icon">🎓</div>
+          <h3 class="story-card__title">星炬學院的適格者</h3>
+          <p class="story-card__text">
+            來自拉海洛羅亞部族的少女，是漂泊者重要的家人。為了與隧者兵裝達成共鳴，她選擇超頻自身，卻因此失去了肉體，成為僅有漂泊者才能看見的「電子幽靈」。儘管如此，她從未放棄希望，以堅定的意志繼續守護身邊的人。名字源自希伯來語 אֱמֶת（emet），意為「真理」或「忠實」。
+          </p>
+        </div>
+      </div>
+
+      <!-- 故事卡 3 -->
+      <div class="story-card card gs">
+        <div class="story-card__image img-hover-zoom">
+          <div class="img-placeholder">
+            <img src="./assets/images/story-battle.jpg" alt="戰鬥場景" onerror="this.style.display='none'">
+            <span class="placeholder-text">星輝中飛翔的歌姬</span>
+          </div>
+        </div>
+        <div class="story-card__body">
+          <div class="story-card__icon">✨</div>
+          <h3 class="story-card__title">星輝中飛翔的歌姬</h3>
+          <p class="story-card__text">
+            顯化隧者兵裝，化身為強大的機兵形態。她的偶像藝名為 Fleet Snowfluff（軟綿雪花），在戰場上以星光為翼，翱翔天際。她的戰鬥宣言是——「我會消滅，意圖毀滅的惡」。這份決心不僅來自力量，更來自她對所愛之人的深切守護。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="section-divider gs">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ============================
+       5. 設計細節展示區
+       ============================ -->
+  <section class="section" id="design">
+    <div class="container">
+      <div class="section-header gs">
+        <span class="label">Design Details</span>
+        <h2 class="title">設計細節展示</h2>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="design-grid">
+
+        <!-- 設計卡 01 -->
+        <div class="design-card card img-hover-zoom gs">
+          <div class="design-card__image">
+            <div class="img-placeholder">
+              <img src="./assets/images/design-hair.jpg" alt="粉色漸變長髮" onerror="this.style.display='none'">
+              <span class="placeholder-text">粉色漸變長髮</span>
+            </div>
+            <span class="design-card__number">01</span>
+          </div>
+          <div class="design-card__body">
+            <h3 class="design-card__title">粉色漸變長髮</h3>
+            <p class="design-card__desc">從櫻粉色起始，經過柔和的漸變過渡至檸檬黃色髮尾，高馬尾造型展現少女的活力與靈動。</p>
+          </div>
+        </div>
+
+        <!-- 設計卡 02 -->
+        <div class="design-card card img-hover-zoom gs">
+          <div class="design-card__image">
+            <div class="img-placeholder">
+              <img src="./assets/images/design-outfit.jpg" alt="科技風服飾" onerror="this.style.display='none'">
+              <span class="placeholder-text">科技風黑粉服飾</span>
+            </div>
+            <span class="design-card__number">02</span>
+          </div>
+          <div class="design-card__body">
+            <h3 class="design-card__title">科技風黑粉服飾</h3>
+            <p class="design-card__desc">黑色為底搭配粉色與藍色光線裝飾，融合機械科技感與少女柔美，翼形髮夾點綴頭部。</p>
+          </div>
+        </div>
+
+        <!-- 設計卡 03 -->
+        <div class="design-card card img-hover-zoom gs">
+          <div class="design-card__image">
+            <div class="img-placeholder">
+              <img src="./assets/images/design-mech.jpg" alt="隧者兵裝" onerror="this.style.display='none'">
+              <span class="placeholder-text">隧者兵裝 · 機兵形態</span>
+            </div>
+            <span class="design-card__number">03</span>
+          </div>
+          <div class="design-card__body">
+            <h3 class="design-card__title">隧者兵裝 · 機兵形態</h3>
+            <p class="design-card__desc">可顯化的機兵戰鬥形態，光翼展開後具備飛行能力，是愛彌斯獨特的戰鬥方式。</p>
+          </div>
+        </div>
+
+        <!-- 設計卡 04 -->
+        <div class="design-card card img-hover-zoom gs">
+          <div class="design-card__image">
+            <div class="img-placeholder">
+              <img src="./assets/images/design-ciallo.jpg" alt="剪刀手 Ciallo" onerror="this.style.display='none'">
+              <span class="placeholder-text">招牌剪刀手 Ciallo～</span>
+            </div>
+            <span class="design-card__number">04</span>
+          </div>
+          <div class="design-card__body">
+            <h3 class="design-card__title">招牌剪刀手 Ciallo～</h3>
+            <p class="design-card__desc">愛彌斯標誌性的喚取動畫姿勢，剪刀手搭配燦爛笑容，展現她活潑可愛的個性。</p>
+          </div>
+        </div>
+
+        <!-- 設計卡 05 -->
+        <div class="design-card card img-hover-zoom gs">
+          <div class="design-card__image">
+            <div class="img-placeholder">
+              <img src="./assets/images/design-ghost.jpg" alt="電子幽靈形態" onerror="this.style.display='none'">
+              <span class="placeholder-text">電子幽靈形態</span>
+            </div>
+            <span class="design-card__number">05</span>
+          </div>
+          <div class="design-card__body">
+            <h3 class="design-card__title">電子幽靈形態</h3>
+            <p class="design-card__desc">因超頻而失去肉體，成為僅漂泊者可見的電子幽靈。透明光影的存在形態帶有淡淡的哀愁。</p>
+          </div>
+        </div>
+
+        <!-- 設計卡 06 -->
+        <div class="design-card card img-hover-zoom gs">
+          <div class="design-card__image">
+            <div class="img-placeholder">
+              <img src="./assets/images/design-tattoo.jpg" alt="聲痕與紋身" onerror="this.style.display='none'">
+              <span class="placeholder-text">聲痕與藍色心形紋身</span>
+            </div>
+            <span class="design-card__number">06</span>
+          </div>
+          <div class="design-card__body">
+            <h3 class="design-card__title">聲痕與藍色心形紋身</h3>
+            <p class="design-card__desc">鎖骨下方的聲痕搭配藍色心形紋身，是音樂與戰鬥力量的象徵，也是角色辨識度極高的設計。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="section-divider gs">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ============================
+       6. 技能介紹區
+       ============================ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header gs">
+        <span class="label">Combat Skills</span>
+        <h2 class="title">技能介紹</h2>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="skill-list">
+
+        <!-- 技能 1：普攻 -->
+        <div class="skill-card gs">
+          <div class="skill-card__icon">
+            <i class="fa-solid fa-sword" style="color: var(--pink-400);"></i>
+            ⚔️
+          </div>
+          <div class="skill-card__content">
+            <span class="tag tag--pink skill-card__tag">Normal Attack</span>
+            <h3 class="skill-card__title">普攻 · 愛彌斯 / 機兵</h3>
+            <p class="skill-card__desc">
+              最多可進行4段連擊，施展流暢的刀法組合。重擊觸發「即刻響應」機制，獲得 +300% 暴擊傷害的爆發性加成，是核心輸出循環的關鍵環節。
+            </p>
+          </div>
+        </div>
+
+        <!-- 技能 2：共鳴技能 -->
+        <div class="skill-card gs">
+          <div class="skill-card__icon skill-card__icon--cyan">
+            🔄
+          </div>
+          <div class="skill-card__content">
+            <span class="tag tag--cyan skill-card__tag">Resonance Skill</span>
+            <h3 class="skill-card__title">形態切換 · 光翼共奏</h3>
+            <p class="skill-card__desc">
+              在人形與機兵形態之間無縫切換。機兵形態下可展開光翼進行飛行探索，同時解鎖獨特的空中戰鬥招式，實現立體化的戰鬥體驗。
+            </p>
+          </div>
+        </div>
+
+        <!-- 技能 3：共鳴解放 -->
+        <div class="skill-card gs">
+          <div class="skill-card__icon skill-card__icon--gold">
+            💫
+          </div>
+          <div class="skill-card__content">
+            <span class="tag tag--gold skill-card__tag">Resonance Liberation</span>
+            <h3 class="skill-card__title">星輝破界而來 · 終結</h3>
+            <p class="skill-card__desc">
+              核心爆發技能。透過累積同步率與共鳴率達到閾值後釋放終結技，造成毀滅性傷害。專武「永明極星」提供額外加成：32% 無視防禦 + 10% 無視抗性，使終結技威力大幅躍升。
+            </p>
+          </div>
+        </div>
+
+        <!-- 技能 4：固有技能 -->
+        <div class="skill-card gs">
+          <div class="skill-card__icon skill-card__icon--purple">
+            🌟
+          </div>
+          <div class="skill-card__content">
+            <span class="tag tag--purple skill-card__tag">Inherent Skill</span>
+            <h3 class="skill-card__title">星與星之間</h3>
+            <p class="skill-card__desc">
+              需要隊伍中至少2位震諧屬性隊友才能觸發。啟動後為全隊提供 10%～20% 的傷害加深效果，是組隊時需要考量的重要機制。
+            </p>
+          </div>
+        </div>
+
+        <!-- 技能 5：命座回路 -->
+        <div class="skill-card gs">
+          <div class="skill-card__icon skill-card__icon--coral">
+            ⚡
+          </div>
+          <div class="skill-card__content">
+            <span class="tag tag--coral skill-card__tag">Forte Circuit</span>
+            <h3 class="skill-card__title">即刻響應 · 輝芒</h3>
+            <p class="skill-card__desc">
+              滿足特定條件後自動觸發的強化狀態，無需手動操作。進入輝芒狀態後，攻擊附帶額外光翼效果，大幅提升整體輸出節奏與傷害。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="section-divider gs">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ============================
+       7. 雙模態系統區
+       ============================ -->
+  <section class="section" id="modes">
+    <div class="container">
+      <div class="section-header gs">
+        <span class="label">Dual Resonance Mode</span>
+        <h2 class="title">雙模態系統</h2>
+        <div class="divider-line"></div>
+      </div>
+
+      <p class="mode-intro gs">
+        愛彌斯擁有獨特的雙共鳴模態系統，可根據戰鬥場景選擇「震諧」或「聚爆」模態，針對不同敵人類型發揮最大效能。
+      </p>
+
+      <div class="mode-grid">
+
+        <!-- 震諧模態 -->
+        <div class="mode-card mode-card--pink glass-card gs">
+          <div class="mode-card__header">
+            <span class="mode-card__icon">🔮</span>
+            <div>
+              <h3 class="mode-card__title">共鳴模態 · 震諧</h3>
+              <span class="mode-card__subtitle">Tune Rupture</span>
+            </div>
+          </div>
+          <div class="mode-card__features">
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>單體高爆發輸出定位</span>
+            </div>
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>疊加震諧軌跡，上限 30 層</span>
+            </div>
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>暴擊傷害 +60%</span>
+            </div>
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>終結技附帶 20% 無視防禦</span>
+            </div>
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>適合 BOSS 戰場景</span>
+            </div>
+          </div>
+          <div class="mode-card__team">
+            <strong>推薦搭配：</strong>琳奈 + 莫寧
+          </div>
+        </div>
+
+        <!-- 聚爆模態 -->
+        <div class="mode-card mode-card--cyan glass-card gs">
+          <div class="mode-card__header">
+            <span class="mode-card__icon">💠</span>
+            <div>
+              <h3 class="mode-card__title">共鳴模態 · 聚爆</h3>
+              <span class="mode-card__subtitle">Fusion Burst</span>
+            </div>
+          </div>
+          <div class="mode-card__features">
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>AOE 範圍清場定位</span>
+            </div>
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>聚爆效應 5 層後引爆</span>
+            </div>
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>暴擊傷害 +60%</span>
+            </div>
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>穩定範圍輸出能力</span>
+            </div>
+            <div class="mode-card__feature">
+              <i class="fa-solid fa-circle"></i>
+              <span>適合多目標場景</span>
+            </div>
+          </div>
+          <div class="mode-card__team">
+            <strong>推薦搭配：</strong>千咲 + 聚爆副C
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="section-divider gs">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ============================
+       8. 專屬武器區
+       ============================ -->
+  <section class="section" id="weapon">
+    <div class="container">
+      <div class="section-header gs">
+        <span class="label">Signature Weapon</span>
+        <h2 class="title">專屬武器</h2>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="weapon-layout gs">
+
+        <!-- 武器圖片 -->
+        <div class="weapon-image">
+          <div class="img-placeholder">
+            <img src="./assets/images/weapon-everbright.jpg" alt="永明極星" onerror="this.style.display='none'">
+            <span class="placeholder-text">永明極星<br>Everbright Polestar</span>
+          </div>
+        </div>
+
+        <!-- 武器資訊 -->
+        <div class="weapon-info">
+          <h3 class="weapon-info__name">永明極星</h3>
+          <p class="weapon-info__sub">
+            <i class="fa-solid fa-star" style="color: var(--gold);"></i>
+            EVERBRIGHT POLESTAR · 5★ 迅刀
+          </p>
+          <p class="weapon-info__desc">
+            愛彌斯的專屬五星迅刀武器。裝備後大幅強化終結技傷害，提供無視 32% 防禦與 10% 熱熔抗性的穿透能力，同時為全屬傷害帶來 12% 的加成。是愛彌斯發揮最大戰力的核心裝備。
+          </p>
+
+          <div class="weapon-stats">
+            <div class="weapon-stat">
+              <div class="weapon-stat__label">
+                <span>無視防禦</span>
+                <span class="weapon-stat__value">85%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar__fill" style="width: 0%;" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="weapon-stat">
+              <div class="weapon-stat__label">
+                <span>無視抗性</span>
+                <span class="weapon-stat__value">65%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar__fill progress-bar__fill--cyan" style="width: 0%;" data-width="65%"></div>
+              </div>
+            </div>
+            <div class="weapon-stat">
+              <div class="weapon-stat__label">
+                <span>全傷加成</span>
+                <span class="weapon-stat__value">55%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar__fill" style="width: 0%;" data-width="55%"></div>
+              </div>
+            </div>
+            <div class="weapon-stat">
+              <div class="weapon-stat__label">
+                <span>泛用性</span>
+                <span class="weapon-stat__value">30%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar__fill progress-bar__fill--gold" style="width: 0%;" data-width="30%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="weapon-note">
+            <i class="fa-solid fa-circle-info"></i>
+            注意：專武效果僅在裝備角色為愛彌斯時完整觸發。泛用性較低，不建議給其他角色使用。
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="section-divider gs">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ============================
+       9. 組隊思路區
+       ============================ -->
+  <section class="section" id="teams">
+    <div class="container">
+      <div class="section-header gs">
+        <span class="label">Team Composition</span>
+        <h2 class="title">組隊思路</h2>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="team-grid">
+
+        <!-- 隊伍 1：震諧隊 -->
+        <div class="team-card gs">
+          <div class="team-card__header">
+            <span class="rating-badge rating-badge--s-plus">S+</span>
+            <h3 class="team-card__name">震諧隊</h3>
+          </div>
+          <div class="team-card__members">
+            <div class="team-member">
+              <div class="avatar avatar--main img-placeholder" style="width:72px;height:72px;border-radius:50%;">
+                <img src="./assets/images/avatar-aemeath.jpg" alt="愛彌斯" onerror="this.style.display='none'">
+                <span class="placeholder-text" style="font-size:0.6rem;">愛彌斯</span>
+              </div>
+              <span class="team-member__name">愛彌斯</span>
+              <span class="team-member__role" style="color: var(--pink-400);">主C</span>
+            </div>
+            <div class="team-member">
+              <div class="avatar img-placeholder" style="width:72px;height:72px;border-radius:50%;">
+                <img src="./assets/images/avatar-linnai.jpg" alt="琳奈" onerror="this.style.display='none'">
+                <span class="placeholder-text" style="font-size:0.6rem;">琳奈</span>
+              </div>
+              <span class="team-member__name">琳奈</span>
+              <span class="team-member__role">輔助</span>
+            </div>
+            <div class="team-member">
+              <div class="avatar img-placeholder" style="width:72px;height:72px;border-radius:50%;">
+                <img src="./assets/images/avatar-morning.jpg" alt="莫寧" onerror="this.style.display='none'">
+                <span class="placeholder-text" style="font-size:0.6rem;">莫寧</span>
+              </div>
+              <span class="team-member__name">莫寧</span>
+              <span class="team-member__role">副C</span>
+            </div>
+          </div>
+          <p class="team-card__desc">
+            最強震諧組合。琳奈提供增傷與共鳴支援，莫寧作為副C補充傷害與震諧層數疊加，三人完美觸發固有技能「星與星之間」。
+          </p>
+        </div>
+
+        <!-- 隊伍 2：聚爆隊 -->
+        <div class="team-card gs">
+          <div class="team-card__header">
+            <span class="rating-badge rating-badge--a-plus">A+</span>
+            <h3 class="team-card__name">聚爆隊</h3>
+          </div>
+          <div class="team-card__members">
+            <div class="team-member">
+              <div class="avatar avatar--main img-placeholder" style="width:72px;height:72px;border-radius:50%;">
+                <img src="./assets/images/avatar-aemeath.jpg" alt="愛彌斯" onerror="this.style.display='none'">
+                <span class="placeholder-text" style="font-size:0.6rem;">愛彌斯</span>
+              </div>
+              <span class="team-member__name">愛彌斯</span>
+              <span class="team-member__role" style="color: var(--pink-400);">主C</span>
+            </div>
+            <div class="team-member">
+              <div class="avatar img-placeholder" style="width:72px;height:72px;border-radius:50%;">
+                <img src="./assets/images/avatar-chisaki.jpg" alt="千咲" onerror="this.style.display='none'">
+                <span class="placeholder-text" style="font-size:0.6rem;">千咲</span>
+              </div>
+              <span class="team-member__name">千咲</span>
+              <span class="team-member__role">輔助</span>
+            </div>
+            <div class="team-member">
+              <div class="avatar img-placeholder" style="width:72px;height:72px;border-radius:50%;">
+                <img src="./assets/images/avatar-linnai.jpg" alt="琳奈" onerror="this.style.display='none'">
+                <span class="placeholder-text" style="font-size:0.6rem;">琳奈</span>
+              </div>
+              <span class="team-member__name">琳奈</span>
+              <span class="team-member__role">輔助</span>
+            </div>
+          </div>
+          <p class="team-card__desc">
+            聚爆模態專用隊伍。千咲提供聚爆效應支援，琳奈補充增傷，適合多目標副本與日常清怪場景，範圍覆蓋能力優秀。
+          </p>
+        </div>
+
+        <!-- 隊伍 3：泛用隊 -->
+        <div class="team-card gs">
+          <div class="team-card__header">
+            <span class="rating-badge rating-badge--a">A</span>
+            <h3 class="team-card__name">泛用隊</h3>
+          </div>
+          <div class="team-card__members">
+            <div class="team-member">
+              <div class="avatar avatar--main img-placeholder" style="width:72px;height:72px;border-radius:50%;">
+                <img src="./assets/images/avatar-aemeath.jpg" alt="愛彌斯" onerror="this.style.display='none'">
+                <span class="placeholder-text" style="font-size:0.6rem;">愛彌斯</span>
+              </div>
+              <span class="team-member__name">愛彌斯</span>
+              <span class="team-member__role" style="color: var(--pink-400);">主C</span>
+            </div>
+            <div class="team-member">
+              <div class="avatar img-placeholder" style="width:72px;height:72px;border-radius:50%;">
+                <img src="./assets/images/avatar-guardian.jpg" alt="守岸人" onerror="this.style.display='none'">
+                <span class="placeholder-text" style="font-size:0.6rem;">守岸人</span>
+              </div>
+              <span class="team-member__name">守岸人</span>
+              <span class="team-member__role">治療</span>
+            </div>
+            <div class="team-member">
+              <div class="avatar img-placeholder" style="width:72px;height:72px;border-radius:50%;">
+                <img src="./assets/images/avatar-verina.jpg" alt="維里奈" onerror="this.style.display='none'">
+                <span class="placeholder-text" style="font-size:0.6rem;">維里奈</span>
+              </div>
+              <span class="team-member__name">維里奈</span>
+              <span class="team-member__role">輔助</span>
+            </div>
+          </div>
+          <p class="team-card__desc">
+            穩定泛用組合。守岸人提供治療與護盾確保生存，維里奈提供增傷輔助，適合各種場景與新手玩家。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="section-divider gs">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ============================
+       10. 共鳴鏈推薦區
+       ============================ -->
+  <section class="section" id="chain">
+    <div class="container">
+      <div class="section-header gs">
+        <span class="label">Resonance Chain</span>
+        <h2 class="title">共鳴鏈推薦</h2>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="chain-timeline">
+
+        <!-- 0 鏈 -->
+        <div class="chain-node gs">
+          <div class="chain-node__dot chain-node__dot--highlight"></div>
+          <span class="chain-node__label">0 鏈（0+1）</span>
+          <h3 class="chain-node__title">零鏈即可戰</h3>
+          <p class="chain-node__desc">
+            愛彌斯零鏈即為頂級主C，基礎機制完整，傷害循環流暢。搭配專武可直接衝擊逆境深塔高層。
+          </p>
+          <div class="chain-node__stats">
+            <span class="tag tag--gold">T0</span>
+            <span class="tag tag--pink">T0.5（冥歌海墟）</span>
+          </div>
+        </div>
+
+        <!-- 2 鏈 -->
+        <div class="chain-node gs">
+          <div class="chain-node__dot chain-node__dot--highlight"></div>
+          <span class="chain-node__label">2 鏈（2+1）</span>
+          <h3 class="chain-node__title">倍率躍升</h3>
+          <p class="chain-node__desc">
+            技能倍率大幅提升，性價比最佳的停手點。2鏈後傷害質變明顯，建議預算有限的玩家以此為目標。
+          </p>
+          <div class="chain-node__stats">
+            <span class="tag tag--cyan">性價比最佳</span>
+          </div>
+        </div>
+
+        <!-- 3 鏈 -->
+        <div class="chain-node gs">
+          <div class="chain-node__dot"></div>
+          <span class="chain-node__label">3 鏈（3+1）</span>
+          <h3 class="chain-node__title">單走神鏈</h3>
+          <p class="chain-node__desc">
+            獨立作戰能力大幅強化，減少對隊友依賴。3鏈後可更靈活地調配隊伍資源，適合多隊伍輪換的玩家。
+          </p>
+          <div class="chain-node__stats">
+            <span class="tag tag--purple">獨立強化</span>
+          </div>
+        </div>
+
+        <!-- 6 鏈 -->
+        <div class="chain-node gs">
+          <div class="chain-node__dot chain-node__dot--highlight"></div>
+          <span class="chain-node__label">6 鏈（6+1 / 6+5）</span>
+          <h3 class="chain-node__title">春風祝頌你的旅途</h3>
+          <p class="chain-node__desc">
+            完全體愛彌斯。暴擊率提升至 80%，暴擊傷害高達 275%，成為毀天滅地的終極輸出形態。搭配滿精專武（6+5），達到遊戲頂峰的破壞力。
+          </p>
+          <div class="chain-node__stats">
+            <span class="tag tag--gold">暴擊率 80%</span>
+            <span class="tag tag--coral">暴傷 275%</span>
+            <span class="tag tag--pink">超級強</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="section-divider gs">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ============================
+       11. 圖片 Gallery 區
+       ============================ -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-header gs">
+        <span class="label">Gallery</span>
+        <h2 class="title">更多圖片</h2>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gs">
+          <div class="img-placeholder" style="background: linear-gradient(135deg, #1a0520, #2d1040, #0d1b2a);">
+            <img src="./assets/images/gallery-battle1.jpg" alt="戰鬥指南截圖 1" onerror="this.style.display='none'">
+            <span class="placeholder-text">戰鬥指南 I</span>
+          </div>
+          <span class="gallery-item__label">戰鬥指南截圖</span>
+        </div>
+        <div class="gallery-item gs">
+          <div class="img-placeholder" style="background: linear-gradient(135deg, #0d1b2a, #1a0a2e, #1e0e30);">
+            <img src="./assets/images/gallery-battle2.jpg" alt="戰鬥指南截圖 2" onerror="this.style.display='none'">
+            <span class="placeholder-text">戰鬥指南 II</span>
+          </div>
+          <span class="gallery-item__label">技能展示</span>
+        </div>
+        <div class="gallery-item gs">
+          <div class="img-placeholder" style="background: linear-gradient(135deg, #2d1040, #1a0520, #0d0d1a);">
+            <img src="./assets/images/gallery-battle3.jpg" alt="戰鬥指南截圖 3" onerror="this.style.display='none'">
+            <span class="placeholder-text">戰鬥指南 III</span>
+          </div>
+          <span class="gallery-item__label">終結技演出</span>
+        </div>
+        <div class="gallery-item gs">
+          <div class="img-placeholder" style="background: linear-gradient(135deg, #0d0d1a, #1a0a2e, #2d1040);">
+            <img src="./assets/images/gallery-report.jpg" alt="評估報告" onerror="this.style.display='none'">
+            <span class="placeholder-text">評估報告</span>
+          </div>
+          <span class="gallery-item__label">角色評估報告</span>
+        </div>
+        <div class="gallery-item gs">
+          <div class="img-placeholder" style="background: linear-gradient(135deg, #1e0e30, #2d1040, #1a0520);">
+            <img src="./assets/images/gallery-card.jpg" alt="角色卡面" onerror="this.style.display='none'">
+            <span class="placeholder-text">角色卡面</span>
+          </div>
+          <span class="gallery-item__label">抽卡卡面</span>
+        </div>
+        <div class="gallery-item gs">
+          <div class="img-placeholder" style="background: linear-gradient(135deg, #0d1b2a, #1a0520, #2d1040);">
+            <img src="./assets/images/gallery-starry.jpg" alt="星空場景" onerror="this.style.display='none'">
+            <span class="placeholder-text">星空場景</span>
+          </div>
+          <span class="gallery-item__label">星空場景</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="section-divider gs">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ============================
+       12. Footer
+       ============================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logo gs">AEMEATH</div>
+      <div class="footer__divider"></div>
+      <p class="footer__copy gs">
+        &copy; KURO GAMES 庫洛科技 — Wuthering Waves 鳴潮<br>
+        本網站為粉絲製作的角色展示頁面，所有角色、圖片及相關素材版權歸庫洛科技所有。<br>
+        圖片來源：<a href="https://wutheringwaves.fandom.com/wiki/Aemeath" target="_blank" rel="noopener">Fandom Wiki</a> /
+        <a href="https://www.prydwen.gg/wuthering-waves/characters/aemeath/" target="_blank" rel="noopener">Prydwen</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================
+       Scripts
+       ============================ -->
+  <!-- GSAP + ScrollTrigger (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="js/starfield.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

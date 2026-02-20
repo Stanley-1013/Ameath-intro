@@ -1,0 +1,180 @@
+/* ============================================
+   Responsive — RWD 響應式斷點
+   Mobile First 策略
+   ============================================ */
+
+/* =====================
+   640px — 小平板
+   ===================== */
+@media (min-width: 640px) {
+  .design-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item {
+    height: 220px;
+  }
+
+  .hero__image-wrapper {
+    width: 260px;
+    height: 350px;
+  }
+}
+
+/* =====================
+   768px — 平板
+   ===================== */
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+  }
+
+  .section {
+    padding: var(--space-5xl) 0;
+  }
+
+  /* 導航顯示連結 */
+  .nav__links {
+    display: flex;
+  }
+
+  .nav__hamburger {
+    display: none;
+  }
+
+  .nav__mobile-menu {
+    display: none !important;
+  }
+
+  /* Hero */
+  .hero__image-wrapper {
+    width: 280px;
+    height: 380px;
+  }
+
+  /* 故事卡 — 左圖右文 */
+  .story-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .story-card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .story-card__image {
+    width: 280px;
+    min-width: 280px;
+    height: auto;
+    min-height: 240px;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  }
+
+  .story-card:nth-child(even) .story-card__image {
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+
+  .story-card__image .img-placeholder {
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  }
+
+  .story-card:nth-child(even) .story-card__image .img-placeholder {
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+
+  .story-card__body {
+    border-top: 1px solid var(--glass-border);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .story-card:nth-child(even) .story-card__body {
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  }
+
+  /* 模態 */
+  .mode-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 武器 */
+  .weapon-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .weapon-image {
+    width: 300px;
+    min-width: 300px;
+    margin: 0;
+  }
+
+  /* 組隊 */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item {
+    height: 240px;
+  }
+}
+
+/* =====================
+   1024px — 筆電
+   ===================== */
+@media (min-width: 1024px) {
+  /* 設計卡片 3 欄 */
+  .design-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 組隊 3 欄 */
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Gallery 3 欄 */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-item {
+    height: 250px;
+  }
+
+  /* 故事卡圖片更大 */
+  .story-card__image {
+    width: 350px;
+    min-width: 350px;
+  }
+}
+
+/* =====================
+   1280px — 桌面
+   ===================== */
+@media (min-width: 1280px) {
+  :root {
+    --container-max: 1240px;
+  }
+
+  .hero__image-wrapper {
+    width: 300px;
+    height: 400px;
+  }
+
+  .story-card__image {
+    width: 400px;
+    min-width: 400px;
+  }
+}

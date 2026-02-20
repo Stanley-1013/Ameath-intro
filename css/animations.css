@@ -1,0 +1,170 @@
+/* ============================================
+   Animations — 動畫 Keyframes 與過渡效果
+   ============================================ */
+
+/* --- GSAP ScrollTrigger 入場預設 --- */
+.gs {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* --- Loading 旋轉圓環 --- */
+@keyframes spin-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Hero 發光邊框旋轉 --- */
+@keyframes glow-rotate {
+  0% { filter: hue-rotate(0deg) brightness(1); }
+  50% { filter: hue-rotate(30deg) brightness(1.15); }
+  100% { filter: hue-rotate(0deg) brightness(1); }
+}
+
+/* --- 浮動上升粒子 --- */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+/* --- 脈動 --- */
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* --- 彈跳提示 --- */
+@keyframes bounce-down {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(8px); }
+  60% { transform: translateY(4px); }
+}
+
+/* --- 淡入 --- */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- 淡入上移 --- */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- 漸層邊框旋轉 --- */
+@keyframes border-glow {
+  0% {
+    border-color: rgba(255, 126, 179, 0.3);
+    box-shadow: 0 0 15px rgba(255, 126, 179, 0.1);
+  }
+  33% {
+    border-color: rgba(0, 210, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.1);
+  }
+  66% {
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+  }
+  100% {
+    border-color: rgba(255, 126, 179, 0.3);
+    box-shadow: 0 0 15px rgba(255, 126, 179, 0.1);
+  }
+}
+
+/* --- Loading 畫面 --- */
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-base);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-ring {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(255, 126, 179, 0.15);
+  border-top-color: var(--pink-400);
+  border-radius: var(--radius-full);
+  animation: spin-ring 1s linear infinite;
+  margin-bottom: var(--space-lg);
+}
+
+.loader-text {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  color: var(--pink-400);
+}
+
+/* --- 浮動粒子容器 --- */
+.floating-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.floating-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  animation: float-up linear infinite;
+  opacity: 0;
+}
+
+/* --- Hero 入場序列（由 GSAP 控制，此處為 fallback） --- */
+.hero-element {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* --- 圖片 Hover 縮放 --- */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img,
+.img-hover-zoom .img-placeholder {
+  transition: transform var(--transition-slow);
+}
+
+.img-hover-zoom:hover img,
+.img-hover-zoom:hover .img-placeholder {
+  transform: scale(1.05);
+}
+
+/* --- 滾動提示動畫 --- */
+.scroll-hint {
+  animation: bounce-down 2s ease infinite;
+}
